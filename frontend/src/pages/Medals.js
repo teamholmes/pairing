@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Header, Table } from 'semantic-ui-react';
 import axios from 'axios';
+import mockData from '../mockData';
 
 export default function Medals() {
   const [data, setData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get('http://localhost:4000/medals');
-      setData(result.data);
+      // const result = await axios.get('http://localhost:4000/medals');
+      // setData(result.data);
+      setData(mockData);
     };
     fetchData();
   }, []);
